@@ -1,0 +1,199 @@
+<html lang="en">
+<head>
+    <body background="download1.png"></body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <title>Responsive Navigation Drawer using HTML CSS & Javascript</title>
+</head>
+<script>
+window.onload = function () {
+
+const navigation = document.querySelector('.container .navigation');
+document.querySelector('.toggle').onclick = function(){
+    
+    this.classList.toggle('active');
+
+    navigation.classList.toggle('active');
+
+    /* // other way 
+    if(this.classList.toggle('active')) {
+        document.querySelector('.container .navigation').style.width = '80px';
+    } else {
+        document.querySelector('.container .navigation').style.width = '300px';
+    } */
+    
+}
+
+
+
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    display: flex;
+     justify-content: left;
+     align-items: center;
+     min-height: 100vh;
+
+}
+     
+
+
+
+.container {
+    position: relative;
+}
+
+.container .navigation {
+     position: relative;
+     width: 60px;
+     height: 700px;
+     background-image: url("pic.png.jpg");
+     border-radius: 10px;
+     overflow: hidden;
+     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+     transition: 800ms;
+}
+
+.container .navigation.active {
+    width: 300px;
+}
+
+.container .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.container .navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+
+}
+
+.container .navigation ul li:hover {
+    background: #f5f5f5;
+}
+
+.container .navigation ul li a {
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #050308;
+    font-weight: 500;
+
+}
+
+.container .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 80px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.container .navigation ul li a .icon .fa {
+    font-size: 24px;
+    line-height: 80px;
+}
+
+.container .navigation ul li a .title {
+    position: relative;
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    white-space: nowrap;
+
+}
+
+.toggle {
+    position: absolute;
+    top: calc(50% - 20px);
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background: #0e076e68;
+    cursor: pointer;
+    border: 5px solid #7b3571;
+    border-radius: 50%;
+
+}
+
+.toggle::before {
+    content: '\f054';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+
+}
+
+.toggle.active::before {
+    content: '\f053';
+}
+</style>
+<body>
+
+    <div class="container">
+        <div class="navigation active">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="icon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="toggle active"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html
